@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 app.get('/api/products', (req, res) => {
-    res.send(data);
+    res.json(data);
 })
 
 app.get('*', (req, res) => {
