@@ -12,7 +12,7 @@ export default function Graph(props) {
             <div className="graph-nav">
                 <span className={classNames({ 'active': props.view === graphNavModal.RETAILSALES })} onClick={() => props.onChangeGraph(graphNavModal.RETAILSALES)}>Retail Sales</span>
                 <span className={classNames({ 'active': props.view === graphNavModal.WHOLESALESALES })} onClick={() => props.onChangeGraph(graphNavModal.WHOLESALESALES)}>Wholesale Sales</span>
-                <span className={classNames({ 'active': props.view === graphNavModal.RETAILMARGIN })} onClick={() => props.onChangeGraph(graphNavModal.RETAILMARGIN)}>Retail Margin</span>
+                <span className={classNames({ 'active': props.view === graphNavModal.RETAILMARGIN })} onClick={() => props.onChangeGraph(graphNavModal.RETAILMARGIN)}>Retailer Margin</span>
             </div>
             <div className="graph-mask">
                 <ResponsiveContainer>
