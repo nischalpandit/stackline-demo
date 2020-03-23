@@ -13,8 +13,8 @@ export default function Graph(props) {
                 <ResponsiveContainer>
                     <LineChart data={props.data}
                         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                        <YAxis type="number" domain={[0, 10000000]} tick={false} line={false} />
-                        <Line type="linear" dataKey="retailSales" strokeWidth={4} />
+                        <YAxis type="number" domain={[0, 2000000]} tick={false} line={false} />
+                        <Line type="natural" dataKey="retailSales" strokeWidth={4} dot={false} />
                     </LineChart>
                 </ResponsiveContainer>
             </div>

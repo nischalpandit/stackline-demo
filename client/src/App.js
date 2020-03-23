@@ -3,7 +3,6 @@ import { Route } from 'react-router';
 import Home from './components/Home/Home';
 import Layout from './components/common/Layout'
 import Sales from './components/SalesDemo/Sales'
-import './App.css';
 
 export default () => (
   <Layout>

@@ -26,19 +26,3 @@ export const getMonthlySales = createSelector(
         return monthlySales;
     }
 )
-
-// export const getCustomWeeklySales = createSelector(
-//     getWeeklySales, weeklySales => {
-//         const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-//         let currentMonth = -1;
-//         weeklySales.length && weeklySales.map(item => {
-//             let date = new Date(item.weekEnding);
-//             date = new Date(date.getTime() + Math.abs(date.getTimezoneOffset() * 60000))
-//             if (date.getMonth() != currentMonth) {
-//                 item.name = months[date.getMonth()]
-//                 currentMonth = date.getMonth();
-//             }
-//         })
-//         return weeklySales;
-//     }
-// )

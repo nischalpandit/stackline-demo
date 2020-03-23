@@ -58,7 +58,7 @@ class Sales extends Component {
                         <SideBar title={product.title} image={product.image} subtitle={product.subtitle} tags={product.tags} view={view} onTabClick={this.switchView} />
                     </div>
                     <div className="sales-view">
-                        <Graph title='Retail Sales' data={this.props.monthlySales} />
+                        <Graph title='Retail Sales' data={this.props.product.sales} />
                         <table className="table">
                             <thead>
                                 <tr>
