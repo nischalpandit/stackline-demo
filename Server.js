@@ -8,8 +8,11 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 
-app.get('/api/products', (req, res) => {
-    res.json(data);
+app.get('/api/salesData', (req, res) => {
+    // Delay is for mimicing actual real world api call
+    setTimeout(function () {
+        return res.json(data);
+    }, 2500);
 })
 
 app.get('*', (req, res) => {
