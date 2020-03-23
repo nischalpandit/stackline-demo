@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
-import { dispatchLoadSalesData } from '../../store/Sales';
-import { dispatchSwitchSalesView } from '../../store/Sales';
+import { dispatchLoadSalesData, dispatchSwitchSalesView, dispatchSwitchGraphView } from '../../store/Sales';
 import { getMonthlySales } from '../../selectors/salesDataSelector'
 import LoaderSpinner from '../common/LoaderSpinner';
 import './Sales.css';
@@ -19,6 +18,10 @@ class Sales extends Component {
 
     switchView = (view) => {
         this.props.dispatchSwitchSalesView(view);
+    }
+
+    changeGraph = (view) => {
+        this.props.dispatchSwitchGraphView(view);
     }
 
     formatData(inputDate) {
@@ -58,7 +61,7 @@ class Sales extends Component {
                         <SideBar title={product.title} image={product.image} subtitle={product.subtitle} tags={product.tags} view={view} onTabClick={this.switchView} />
                     </div>
                     <div className="sales-view">
-                        <Graph title='Retail Sales' data={this.props.product.sales} />
+                        <Graph data={this.props.product.sales} view={this.props.graphView} onChangeGraph={this.changeGraph} />
                         <table className="table">
                             <thead>
                                 <tr>
@@ -97,12 +100,14 @@ const mapStateToProps = state => ({
     loading: state.sales.loading,
     error: state.sales.error,
     view: state.sales.view,
+    graphView: state.sales.graphView,
     monthlySales: getMonthlySales(state)
 });
 
 const mapDispatchToProps = {
     dispatchLoadSalesData,
-    dispatchSwitchSalesView
+    dispatchSwitchSalesView,
+    dispatchSwitchGraphView
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sales)

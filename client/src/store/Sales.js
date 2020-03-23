@@ -1,4 +1,4 @@
-import { SalesNavModal } from '../components/SalesDemo/Modal'
+import { SalesNavModal, graphNavModal } from '../components/SalesDemo/Modal'
 
 
 const salesDataLoading = "SALES_DATA_LOADING";
@@ -6,11 +6,13 @@ const salesDataLoadingSuccess = "SALES_DATA_LOADING_SUCCESS";
 const salesDataLoadingError = "SALES_DATA_LOADING_ERROR";
 
 const switchSalesView = "SWITCH_SALES_VIEW";
+const switchGraphView = "SWITCH_GRAPH_VIEW";
 
 const initialState = {
     data: [],
     loading: false,
     error: '',
+    graphView: graphNavModal.RETAILSALES,
     view: SalesNavModal.SALES
 };
 
@@ -29,6 +31,10 @@ export const dispatchSwitchSalesView = (view) => dispatch => {
     dispatch({ type: switchSalesView, view })
 }
 
+export const dispatchSwitchGraphView = (view) => dispatch => {
+    dispatch({ type: switchGraphView, view })
+}
+
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case salesDataLoading:
@@ -39,6 +45,8 @@ export const reducer = (state = initialState, action) => {
             return { ...state, loading: false, error: action.error };
         case switchSalesView:
             return { ...state, view: action.view }
+        case switchGraphView:
+            return { ...state, graphView: action.view }
         default:
             return state;
     }

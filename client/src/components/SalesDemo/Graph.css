@@ -39,7 +39,17 @@
     font-weight: 500;
 }
 
-.graph .graph-title {
-    padding: 15px 20px;
+.graph-nav {
+    display: flex;
+}
+
+.graph-nav span {
+    padding : 15px 20px;
     color: #7a7979;
+    cursor: pointer;
+}
+
+.graph-nav span.active {
+    color: #27323f;
+    font-weight: 700;
 }
